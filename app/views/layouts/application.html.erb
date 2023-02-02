@@ -11,6 +11,20 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+  <div class="container">
+  <% if notice.present? %>
+    <div class="alert alert-primary mt-4" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <% if alert.present? %>
+    <div class="alert alert-danger mt-4" role="alert">
+      <%= alert %>
+    </div>
+  <% end %>
+
+  <%= yield %>
+</div>
+</body>
 </html>
