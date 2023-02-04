@@ -5,7 +5,16 @@
         <img src="<%= image_path("bootstrap-logo-white.svg") %>" width="38" height="30" class="me-3" alt="Bootstrap">
         <a href="/" class="text-white text-decoration-none">Account</a>
       </h1>
-     
+     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <% if user_signed_in? %>
+          <li><a href="<%=articles_path %>" class="nav-link px-2 text-white">[Admin] Article</a></li>
+        <% end %>
+        <li><a href="<%=articles_path %>" class="nav-link px-2 text-white">Articles</a></li>
+        <!--<li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">About</a></li>-->
+      </ul>
       <div class="text-end">
         <% if user_signed_in? %>
           <span class="text-white mx-2"><%= current_user.email %></span>
