@@ -7,9 +7,9 @@
       </h1>
      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <% if user_signed_in? %>
-          <li><a href="<%=articles_path %>" class="nav-link px-2 text-white">[Admin] Article</a></li>
+          <li><a href="<%=admin_articles_path %>" class="nav-link px-2 text-white">[Admin] Article</a></li>
         <% end %>
-        <li><a href="<%=articles_path %>" class="nav-link px-2 text-white">Articles</a></li>
+        <li><a href="<%=list_articles_path %>" class="nav-link px-2 text-white">Articles</a></li>
         <!--<li><a href="#" class="nav-link px-2 text-white">Features</a></li>
         <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
         <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>

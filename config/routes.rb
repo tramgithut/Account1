@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
-  resources :articles
   root 'pages#home'
   get '/info' => 'pages#info', as: :info
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users
+
+  # for normal user
+  resources :articles, only: [] do
+    get '/' => 'articles#index', on: :collection, as: :list
+    get '/:id' => 'articles#show', on: :collection, as: :detail
+  end
+
+  # for admin user
+  namespace :admin do
+    resources :articles
+  end
 end
